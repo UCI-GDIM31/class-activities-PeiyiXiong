@@ -118,4 +118,4 @@ float brightness = (r + g + b) / 3;
         _brightnessText.text = "brightness = " + brightness;
 
     }
-}这是选择题
+}
