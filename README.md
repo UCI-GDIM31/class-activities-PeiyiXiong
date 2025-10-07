@@ -20,12 +20,15 @@ In Step 2, I wrote r += 0.1 without f. Unity gave an error because r is a float.
 
 
 How my code works
+
 Every bounce, _bounces increases and shows on screen.
 Red (r) goes up by 0.1 and resets to 0 if it gets over 1.
 Green (g) goes down by 0.1 and resets to 1 if it gets below 0.
 Blue (b) multiplies by 1.2 and resets to 0.1 if it reaches 1.
 Brightness is the average of r, g, b and shows on screen.
 The ball changes color every bounce, and the bounce count and brightness update correctly.
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
