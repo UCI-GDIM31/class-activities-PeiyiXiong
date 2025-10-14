@@ -19,6 +19,18 @@ _bounces counts how many times the ball bounced. Bounce counts are whole numbers
 In Step 2, I wrote r += 0.1 without f. Unity gave an error because r is a float. Adding f like 0.1f fixed it.
 
 
+###W3
+I belong to Table 5, and I will be answering question 1.
+
+Q: You’re building a rhythm game, and you’re writing a method named DidPlayerHitBeat that tells you whether or not the player accurately hit a beat based on the time that they pressed a key.
+
+The input will include float x and float y. Float x refers to the moment when player's finger touches the screen. Float y refers to the moment when player's finger leaves the screen. In the body part of the method, we will substract y from x to obtain float z. If z is greater than 0.2s, then bool whetherHit equals true. The boolean type whetherHit variable will be the output.
+
+Input: float x (touch time); float y (leave time)
+
+Output type: boolean
+
+
 How my code works
 
 Every bounce, _bounces increases and shows on screen.
