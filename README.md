@@ -31,6 +31,9 @@ Input: float x (touch time); float y (leave time)
 Output type: boolean
 
 
+
+The balls get extremely bright in the Scene if they bounce too many times because every time they hit something, their color gets brighter. In the BallW3 script, I wrote code that increases the pink, green, and blue values a little bit each time the ball collides. If the ball keeps bouncing, these values add up, and the color becomes very bright. That’s why after many bounces, the balls look almost glowing or super bright.
+
 How my code works
 
 Every bounce, _bounces increases and shows on screen.
