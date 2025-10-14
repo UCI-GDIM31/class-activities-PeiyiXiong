@@ -20,7 +20,7 @@ In Step 2, I wrote r += 0.1 without f. Unity gave an error because r is a float.
 
 
 ###W3
-I belong to Table 5, and I will be answering question 1.
+1. I belong to Table 5, and I will be answering question 1.
 
 Q: You’re building a rhythm game, and you’re writing a method named DidPlayerHitBeat that tells you whether or not the player accurately hit a beat based on the time that they pressed a key.
 
@@ -30,9 +30,9 @@ Input: float x (touch time); float y (leave time)
 
 Output type: boolean
 
+2. Class is a family recipe for how to make and present a dish that has been passed down through different generations. Components are the printed version of the recipe in a cookbook. Method is the cooking steps for this dish. Member variables are the ingredients of this dish.
 
-
-The balls get extremely bright in the Scene if they bounce too many times because every time they hit something, their color gets brighter. In the BallW3 script, I wrote code that increases the pink, green, and blue values a little bit each time the ball collides. If the ball keeps bouncing, these values add up, and the color becomes very bright. That’s why after many bounces, the balls look almost glowing or super bright.
+3. The balls get extremely bright in the Scene if they bounce too many times because every time they hit something, their color gets brighter. In the BallW3 script, I wrote code that increases the pink, green, and blue values a little bit each time the ball collides. If the ball keeps bouncing, these values add up, and the color becomes very bright. That’s why after many bounces, the balls look almost glowing or super bright.
 
 How my code works
 
