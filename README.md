@@ -19,7 +19,7 @@ _bounces counts how many times the ball bounced. Bounce counts are whole numbers
 In Step 2, I wrote r += 0.1 without f. Unity gave an error because r is a float. Adding f like 0.1f fixed it.
 
 
-###W3
+### W3
 1. I belong to Table 5, and I will be answering question 1.
 
 Q: You’re building a rhythm game, and you’re writing a method named DidPlayerHitBeat that tells you whether or not the player accurately hit a beat based on the time that they pressed a key.
@@ -43,6 +43,31 @@ Blue (b) multiplies by 1.2 and resets to 0.1 if it reaches 1.
 Brightness is the average of r, g, b and shows on screen.
 The ball changes color every bounce, and the bounce count and brightness update correctly.
 
+### W4
+
+table 5
+
+Line 5: _moveSpeed is a member variable, and the type is float. It is marked with [SerializeField] so it can be edited in Unity’s Inspector even though it is private. This variable controls how fast the cat moves.
+
+Line 22: transform is a Component of the cat GameObject. This line is calling the Translate method. The method parameters are (0, 0, translation), which means it moves the cat forward or backward on the z-axis, but does not move it on the x-axis or y-axis.
+
+Line 25: _rigidBody is a Component of type Rigidbody. This line is setting the linearVelocity property. The type of linearVelocity is Vector3, which stores speed in the x, y, and z directions. The new value keeps the x and z speeds the same but sets the y speed to 0, so the cat’s jump starts from zero vertical speed.
+
+We talked about which objects need a Rigidbody and which should have “Is Trigger” checked. We decided:
+
+Cat: add a Rigidbody so it can move and kick the ball. Do not check Is Trigger.
+
+SoccerBall: add a Rigidbody so it can move and bounce. Do not check Is Trigger.
+
+Goal: do not add a Rigidbody. Check Is Trigger so the ball can go through the Goal and we can detect it.
+
+We also used Freeze Rotation on the X and Z axes for the Cat and SoccerBall so they would not fall over.
+
+After that, we added the BounceOffWall Component to the Cat and SoccerBall. We connected the missing settings and adjusted the Bounce Force. Then we coded Step 1 and tested it. At first, the ball did not bounce correctly, so we fixed the Rigidbody and collider size. After that, the Cat could kick the ball and the ball bounced off the walls.
+
+Finally, when the ball went into the Goal, we saw the Debug message in the Console. The goal celebration effect played, and the points text and time since last goal text updated correctly.
+
+Reflection: Our solution worked well after fixing the Rigidbody and collider settings. Adding Rigidbody to the moving objects and Is Trigger to the Goal made the physics and goal detection work perfectly.
 
 ## Open-Source Assets
 ### W1
