@@ -43,6 +43,12 @@ Blue (b) multiplies by 1.2 and resets to 0.1 if it reaches 1.
 Brightness is the average of r, g, b and shows on screen.
 The ball changes color every bounce, and the bounce count and brightness update correctly.
 
+### W4
+
+table 5
+
+These lines of code mean that line 5 creates a variable called `_moveSpeed` to control how fast the cat moves. Even though it is private, the `[SerializeField]` attribute allows it to be edited in Unity’s Inspector. Line 22 uses `transform.Translate(0, 0, translation)` to move the cat forward or backward based on player input, without changing its left-right or up-down position. Line 25, `_rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, 0f, _rigidBody.linearVelocity.z);`, resets the vertical velocity to 0 before the cat jumps, ensuring that the jump is stable and not affected by any previous up or down movement.
+
 
 ## Open-Source Assets
 ### W1
