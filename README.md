@@ -19,7 +19,7 @@ _bounces counts how many times the ball bounced. Bounce counts are whole numbers
 In Step 2, I wrote r += 0.1 without f. Unity gave an error because r is a float. Adding f like 0.1f fixed it.
 
 
-###W3
+### W3
 1. I belong to Table 5, and I will be answering question 1.
 
 Q: You’re building a rhythm game, and you’re writing a method named DidPlayerHitBeat that tells you whether or not the player accurately hit a beat based on the time that they pressed a key.
