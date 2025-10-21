@@ -47,7 +47,8 @@ The ball changes color every bounce, and the bounce count and brightness update 
 
 table 5
 
-These lines of code mean that line 5 creates a variable called `_moveSpeed` to control how fast the cat moves. Even though it is private, the `[SerializeField]` attribute allows it to be edited in Unity’s Inspector. Line 22 uses `transform.Translate(0, 0, translation)` to move the cat forward or backward based on player input, without changing its left-right or up-down position. Line 25, `_rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, 0f, _rigidBody.linearVelocity.z);`, resets the vertical velocity to 0 before the cat jumps, ensuring that the jump is stable and not affected by any previous up or down movement.
+These lines of code do the following: Line 5 creates a variable called `_moveSpeed` that tells the cat how fast it should move. The word `private` means that only this script can use it, but `[SerializeField]` makes it possible to change the speed in Unity’s Inspector, which is the place where you can edit game objects. Line 22 uses `transform.Translate(0, 0, translation)` to actually move the cat forward or backward depending on what the player presses on the keyboard, without moving it side to side or up and down. Line 25, `_rigidBody.linearVelocity = new Vector3(_rigidBody.linearVelocity.x, 0f, _rigidBody.linearVelocity.z);`, sets the cat’s vertical speed to 0 before it jumps, so that the jump always starts cleanly and is not affected by any previous movement up or down. This makes the cat jump in a smooth and predictable way.
+
 
 
 ## Open-Source Assets
