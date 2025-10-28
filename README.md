@@ -69,6 +69,31 @@ Finally, when the ball went into the Goal, we saw the Debug message in the Conso
 
 Reflection: Our solution worked well after fixing the Rigidbody and collider settings. Adding Rigidbody to the moving objects and Is Trigger to the Goal made the physics and goal detection work perfectly.
 
+### W4
+Question: What is the difference between transform.position and transform.localPosition, and when should I use each?
+
+transform.position gives the object’s position in world space and transform.localPosition gives the object’s position relative to its parent.
+
+Use localPosition when you want to move or place an object based on its parent, and use position when you want to place it in the scene regardless of the parent.
+
+I learned this helps me control objects more precisely in hierarchical setups.
+
+Member Variables: 
+
+public Transform target; → target GameObject the deer will walk to; private NavMeshAgent agent; → reference to the deer’s NavMeshAgent
+
+Methods:
+
+Start() → get the NavMeshAgent using GetComponent<NavMeshAgent>()
+
+Update() → set the deer’s destination to target.position every frame
+
+Notes:
+
+target is a Transform so it can be assigned in the Inspector
+
+NavMeshAgent handles movement and pathfinding automatically
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
