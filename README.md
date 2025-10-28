@@ -69,7 +69,7 @@ Finally, when the ball went into the Goal, we saw the Debug message in the Conso
 
 Reflection: Our solution worked well after fixing the Rigidbody and collider settings. Adding Rigidbody to the moving objects and Is Trigger to the Goal made the physics and goal detection work perfectly.
 
-### W4
+### W5
 Question: What is the difference between transform.position and transform.localPosition, and when should I use each?
 
 transform.position gives the object’s position in world space and transform.localPosition gives the object’s position relative to its parent.
