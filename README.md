@@ -94,6 +94,40 @@ target is a Transform so it can be assigned in the Inspector
 
 NavMeshAgent handles movement and pathfinding automatically
 
+### W6
+【Other tools】
+
+https://docs.google.com/document/d/1exNqQE_zGuOoztND9FT3ldDwkXjJ6m8a8oRDWERaMyg/edit?usp=sharing
+
+1. What member variables does this class need?
+   
+player (Transform) – reference to the player
+
+speed (float) – movement speed of the bat
+
+isChasing (bool) – whether the bat is chasing the player
+
+reachDistance (float) – distance to trigger reaction
+
+2. What methods does this class need? Should it be something Unity provides, or one you write?
+   
+Unity-provided methods: Start(), Update()
+
+Custom methods: StartChasing(), StopChasing(), OnReachPlayer()
+
+3. What should the method(s) do?
+   
+StartChasing() – enable chasing the player
+
+StopChasing() – stop chasing the player
+
+OnReachPlayer() – show a message when bat reaches the player
+
+Update() – move the bat toward the player if isChasing is true
+
+Start() – used temporarily to test chasing when the game starts
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
