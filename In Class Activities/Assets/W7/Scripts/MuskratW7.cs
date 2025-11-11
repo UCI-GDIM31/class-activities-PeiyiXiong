@@ -59,6 +59,14 @@ public class MuskratW7 : MonoBehaviour
             forward * _rotationSpeed * Time.deltaTime
         );
 
+        // rotate around the sphere using the muskrat's up vector (converted to world space)
+        Vector3 worldUp = transform.TransformDirection(Vector3.up);
+        transform.RotateAround(
+            _sphereTransform.position,
+            worldUp,
+            leftright * _rotationSpeed * Time.deltaTime
+        );
+
 
         // STEP 5 -------------------------------------------------------------
         // Once again, set the "flying" and "running" parameters to animate 
@@ -68,6 +76,10 @@ public class MuskratW7 : MonoBehaviour
 
 
         // STEP 5 -------------------------------------------------------------
+        // On a bubble: never flying. Running if there's input.
+        bool isRunning = Mathf.Abs(forward) > 0.01f || Mathf.Abs(leftright) > 0.01f;
+        _animator.SetBool("flying", false);
+        _animator.SetBool("running", isRunning);
     }
 
     // ------------------------------------------------------------------------
@@ -88,6 +100,7 @@ public class MuskratW7 : MonoBehaviour
         float leftright = Input.GetAxis("Horizontal");
 
         // STEP 1 -------------------------------------------------------------
+        transform.Rotate(Vector3.up, leftright * _rotationSpeed * Time.deltaTime, Space.World);
 
 
         // STEP 2 -------------------------------------------------------------
@@ -99,6 +112,8 @@ public class MuskratW7 : MonoBehaviour
         transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;
 
         // STEP 2 -------------------------------------------------------------
+        // fixed: move in the muskrat's forward direction (world-forward replaced with transform.forward)
+        transform.position += movement * transform.forward * _moveSpeed * Time.deltaTime;
 
 
         // STEP 4 -------------------------------------------------------------
@@ -110,6 +125,12 @@ public class MuskratW7 : MonoBehaviour
 
         
         // STEP 4 -------------------------------------------------------------
+        // Use Rigidbody.velocity to determine running/flying state.
+        Vector3 vel = _rigidbody != null ? _rigidbody.linearVelocity : Vector3.zero;
+        bool isFlying = !_rigidbody.isKinematic && Mathf.Abs(vel.y) > 0.1f;
+        bool isRunning = Mathf.Abs(vel.x) > 0.1f || Mathf.Abs(vel.z) > 0.1f || Mathf.Abs(movement) > 0.01f;
+        _animator.SetBool("flying", isFlying);
+        _animator.SetBool("running", isRunning);
     }
 
     // ------------------------------------------------------------------------
