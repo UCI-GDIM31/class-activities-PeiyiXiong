@@ -127,6 +127,32 @@ Update() – move the bat toward the player if isChasing is true
 
 Start() – used temporarily to test chasing when the game starts
 
+### W6
+activity1
+
+https://docs.google.com/document/d/1TsVke4FYWiPQJM1o9TWKmZdGuEjed6uXTYwZxrXfC3I/edit?usp=sharing
+
+In Activity 1, I contributed by helping design the game engineering plan and outlining the systems for Environment.
+
+activity 2
+
+The original code in Step 2 used:
+
+transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;
+
+Problem:
+
+Vector3.forward is always pointing along the world Z-axis, so the Muskrat moves in a fixed direction regardless of which way it is facing.
+
+This ignores the Muskrat’s rotation, causing movement to feel disconnected from its orientation.
+
+Solution:
+
+Replace with:
+
+transform.position += movement * transform.forward * _moveSpeed * Time.deltaTime;
+
+transform.forward points in the Muskrat’s forward direction in world space, so movement respects the rotation and feels natural.
 
 ## Open-Source Assets
 ### W1
