@@ -127,7 +127,7 @@ Update() – move the bat toward the player if isChasing is true
 
 Start() – used temporarily to test chasing when the game starts
 
-### W6
+### W7
 activity1
 
 https://docs.google.com/document/d/1TsVke4FYWiPQJM1o9TWKmZdGuEjed6uXTYwZxrXfC3I/edit?usp=sharing
