@@ -136,23 +136,24 @@ In Activity 1, I contributed by helping design the game engineering plan and out
 
 activity 2
 
-The original code in Step 2 used:
+Part 1: Up Vector Illustrations
 
-transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime;
+Flat Ground: Muskrat’s up vector points straight up; arrow points away from its back.
 
-Problem:
+Bubble: Up vector aligns with surface normal; arrow rotates as Muskrat moves around the bubble.
 
-Vector3.forward is always pointing along the world Z-axis, so the Muskrat moves in a fixed direction regardless of which way it is facing.
+Movement Plan
 
-This ignores the Muskrat’s rotation, causing movement to feel disconnected from its orientation.
+Flat Ground: WASD moves Muskrat forward/backward along transform.forward; A/D rotates around Vector3.up; idle/running/flying animations set accordingly.
 
-Solution:
+Bubble: Use Transform.TransformDirection() for object-space up; RotateAround() for orbit; running animation only, no flying.
 
-Replace with:
+Step 2 Fix
 
-transform.position += movement * transform.forward * _moveSpeed * Time.deltaTime;
+Original: transform.position += movement * Vector3.forward * _moveSpeed * Time.deltaTime; → moves in world Z-axis.
 
-transform.forward points in the Muskrat’s forward direction in world space, so movement respects the rotation and feels natural.
+Fixed: transform.position += movement * transform.forward * _moveSpeed * Time.deltaTime; → respects Muskrat’s rotation.
+
 
 ## Open-Source Assets
 ### W1
